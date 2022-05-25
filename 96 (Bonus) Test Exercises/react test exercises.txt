@@ -1,0 +1,20 @@
+- Write a test for the Welcome component from Props - 01
+- Write a test for the Counter component from State - 01
+- Write a test for the UncontrolledForm component from Forms - 05
+- Write a test for the TodoList component from Lists - 06
+- Write a test for the Login component from useState - 02
+- Write a test for the GithubUser component from useEffect - 03
+- Write a test for the GithubUserList component from useEffect - 04
+- Write a test for the useCounter custom hook from Custom Hooks - 01
+- Write a test for the useGithubUser custom hook from Custom Hooks - 03
+- Write a test for the FilteredList component from useCallbacks and useMemo
+- Write a test for the CarDetails component from useRef - 02
+- Write a test for the App component from React Router - 02
+- Write a test for the useGithubUser hook from SWR - 03
+- Write a test for the CounterReducer reducer from Redux - 01
+- Write a test for the TodosReducer reducer from Redux - 03
+- Write a test for the LoggingMiddleware reducer from Redux - 08
+- Write a test for the DelayMiddleware reducer from Redux - 09
+- Write a test for the fetchUser thunk from Redux - 11
+- Write a test for the ReduxCounter component from Redux - 12
+- Write a test for the ReduxGithubUsers component from Redux - 14
