@@ -1,16 +1,16 @@
-function Saluto(name){
+function Somma(a, b){
   return(
     <div>
-      <h1>
-        Hello,{name}
-      </h1>
+      <h2>
+        {a + b}
+      </h2>
     </div>
   )
 }
 
 function App(){
   return(
-    Saluto('Edoardo')
+    Somma(2, 3)
   )
 }
 
