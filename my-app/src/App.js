@@ -1,11 +1,18 @@
-let hello = <h1>Hello World!</h1>
-
-function App(){
+function Saluto(name){
   return(
     <div>
-      {hello}
+      <h1>
+        Hello,{name}
+      </h1>
     </div>
   )
 }
+
+function App(){
+  return(
+    Saluto('Edoardo')
+  )
+}
+
 
 export default App;
