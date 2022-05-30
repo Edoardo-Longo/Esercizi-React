@@ -1,11 +1,12 @@
 import React from "react";
+import Age from "./Age";
 
 class Welcome extends React.Component {
   render() {
     return (
       <div>
         <h2>Hello, {this.props.name}</h2>;
-        <h2>Your age is {this.props.age}</h2>
+        <Age age={this.props.age}/>
       </div>
     );
   }
