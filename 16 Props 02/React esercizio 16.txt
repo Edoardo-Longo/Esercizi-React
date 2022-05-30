@@ -1,1 +1,8 @@
 What happens if no `name` prop is passed to the `Welcome` component? Can you set a default value for the `name` prop?
+
+Se nessuna `name` prop viene passata al componente Welcome,
+viene solo renderizzato il testo che non riguarda la prop,
+in questo caso Hello.
+
+Si può impostare un valore di default per le props con Component.deafultProp
+e specificando i valori di default
