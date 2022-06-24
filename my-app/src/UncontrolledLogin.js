@@ -14,7 +14,7 @@ class UncontrolledLogin extends React.Component{
         return(
             <>
             <form onSubmit={this.eventHandler}>
-                <input type='text' name="text"></input>
+                <input type='text' name="text" autoFocus></input>
                 <input type='password' name="password"></input>
                 <input type='checkbox' name="check"></input>
             <button type="submit">Log In</button>
