@@ -17,7 +17,9 @@ class Todolist extends React.Component {
 
     eventSaver = () => {
         this.setState((state) => {
-            return { item: state.item.concat(this.state.addItems) }
+            return { item: state.item.concat(this.state.addItems),
+            addItems: '' 
+        }
         })
     }
 
