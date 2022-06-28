@@ -1,42 +1,64 @@
-import React from 'react'
+import React from "react";
 
 class Todolist extends React.Component {
-    
-    state = {
-        item: [
-            'Latte', 'Pane', 'Carne', 'Pesce'
-        ],
-        addItems: ''
-    }
+  state = {
+    item: ["Latte", "Pane", "Carne", "Pesce"],
+    addItems: "",
+  };
 
-    eventHandler = (event) => {
-        this.setState((state) => {
-            return { addItems: state.addItems = event.target.value }
-        })
-    }
+  eventHandler = (event) => {
+    this.setState((state) => {
+      return { addItems: (state.addItems = event.target.value) };
+    });
+  };
 
-    adder = () => {
-        this.setState((state) => {
-            return { item: state.item.concat(this.state.addItems),
-            addItems: '' 
-        }
-        })
-    }
+  adder = () => {
+    this.setState((state) => {
+      return { item: state.item.concat(this.state.addItems), addItems: "" };
+    });
+  };
 
-    reset = ()=>{ this.setState({item:[
-        'Latte', 'Pane', 'Carne', 'Pesce'
-    ]})}
+  remover = (item) => {
+    this.setState((state) => {
+      const array = state.item.filter((todo) => {
+        return todo !== item;
+      });
+      return { item: (state.item = array) };
+    });
+  };
 
-    render() {
-        return (
-            <div>
-                <ul>{this.state.item.map((item, index) => (<li key={index}>{item}</li>))}</ul>
-                <input type="text" value={this.state.addItems} onChange={this.eventHandler} />
-                <button onClick={this.adder}>Aggiungi</button>
-                <button onClick={this.reset}>Reset</button>
-            </div>
-        )
-    }
+  reset = () => {
+    this.setState({ item: ["Latte", "Pane", "Carne", "Pesce"] });
+  };
+
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.state.item.map((item, index) => (
+            <li key={index}>
+              {item}
+              <button
+                key={index + "btn"}
+                onClick={() => {
+                  this.remover(item);
+                }}
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+        <input
+          type="text"
+          value={this.state.addItems}
+          onChange={this.eventHandler}
+        />
+        <button onClick={this.adder}>Aggiungi</button>
+        <button onClick={this.reset}>Reset</button>
+      </div>
+    );
+  }
 }
 
-export default Todolist
+export default Todolist;
