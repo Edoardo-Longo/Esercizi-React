@@ -15,7 +15,7 @@ class Todolist extends React.Component {
         })
     }
 
-    eventSaver = () => {
+    adder = () => {
         this.setState((state) => {
             return { item: state.item.concat(this.state.addItems),
             addItems: '' 
@@ -23,13 +23,17 @@ class Todolist extends React.Component {
         })
     }
 
+    reset = ()=>{ this.setState({item:[
+        'Latte', 'Pane', 'Carne', 'Pesce'
+    ]})}
 
     render() {
         return (
             <div>
                 <ul>{this.state.item.map((item, index) => (<li key={index}>{item}</li>))}</ul>
                 <input type="text" value={this.state.addItems} onChange={this.eventHandler} />
-                <button onClick={this.eventSaver}>Aggiungi</button>
+                <button onClick={this.adder}>Aggiungi</button>
+                <button onClick={this.reset}>Reset</button>
             </div>
         )
     }
