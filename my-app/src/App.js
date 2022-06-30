@@ -1,6 +1,6 @@
 import { useState } from "react";
 import GithubUser from "./GithubUser";
-import { SWRConfig } from "swr";
+import { SWRConfig, mutate } from "swr";
 const array = ["Edoardo-Longo"];
 const fetcher = (url) => fetch(url).then((resp) => resp.json());
 
@@ -24,14 +24,14 @@ function App() {
         {array.map((element) => {
           return (
             <>
-
-        {element!==""&&
-        <div style={{border: "1px solid red,",width:'500px', height:'500px'}}>
-        <GithubUser username={element}/>
-        </div>}
-        </>
-
-        )})}
+              {element !== "" && (
+                <div>
+                  <GithubUser username={element} />
+                </div>
+              )}
+            </>
+          );
+        })}
         <form onSubmit={launchData}>
           <input
             type="text"
