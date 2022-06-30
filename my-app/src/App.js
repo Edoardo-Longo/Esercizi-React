@@ -25,6 +25,7 @@ function App() {
           <Route path="/githubuser">
             <Route path=":name" element={<ShowGithubUser />} />
           </Route>
+          <Route path='*' element={<h1>Errore 404</h1>} />
         </Routes>
       </div>
     </>
