@@ -3,6 +3,13 @@ import { useState, useEffect } from "react";
 function Counter({ initialValue = 0, onCounterChange }) {
   const [counter, setCounter] = useState(initialValue);
 
+  useEffect(()=>{
+    console.log('I have mounted')
+    return()=>{
+        console.log('I am about to be unmounted')
+    }
+  },[])
+  
   useEffect(() => {
     onCounterChange(counter);
   }, [counter]);
