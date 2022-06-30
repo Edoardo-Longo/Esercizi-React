@@ -1,11 +1,25 @@
-import { useParams } from "react-router-dom";
-import GithubUser from "./GithubUser";
+import { useState } from "react"
+import { Link, Outlet} from "react-router-dom"
 export default function ShowGithubUser() {
-    const { name } = useParams()
+    const [name,setName]=useState(['Edoardo-Longo'])
+    function handleInput(event ){
+        event.preventDefault()
+        setName(name.concat(event.target.previousSibling.value))
+    }
     return (
         <>
-            {console.log(name)}
-            <GithubUser name={name} />
+            <form>
+        <input type="text"></input>
+        <button onClick={handleInput}>Link!</button>
+        </form>
+        <div>
+            {name.map(item=>{return(
+                <div>
+                <Link to={`${item}`}>{item}</Link>
+                </div>
+            )})}
+        </div>
+        <Outlet/>
         </>
     )
 }
