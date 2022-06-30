@@ -1,9 +1,11 @@
 import useSWR from "swr";
 export default function useFetch(username) {
-  const fetcher = (url) => fetch(url).then((resp) => resp.json());
+  const prova = () => {
+    console.log("fetch bloccata");
+  };
+  const isValid = username ? true : false;
   const { data, error } = useSWR(
-    `https://api.github.com/users/${username}`,
-    fetcher
+    isValid ? `https://api.github.com/users/${username}` : prova()
   );
-  return { data, error, isLoading: !data && !error };
+  return { data, error, isLoading: !data && !error && !isValid, isValid };
 }
