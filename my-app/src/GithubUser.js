@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 
 export default function GithubUserProvider({ username }) {
 
-  const [data, setData] = useState("");
   const [error, setError] = useState(false);
+  console.log(username);
+  const [data, setData] = useState(username);
 
   async function userProvider() {
     try {
@@ -19,7 +20,7 @@ export default function GithubUserProvider({ username }) {
       return setError(errore);
     }
   }
-  
+
   useEffect(() => {
     userProvider();
   }, []);
@@ -27,7 +28,7 @@ export default function GithubUserProvider({ username }) {
   return (
     <>
       <h1>{data.login}</h1>
-      <img src={data.avatar_url}></img>
+      <img src={data.avatar_url} alt=''></img>
       <h1>{data.name}</h1>
       {error && <h1>{error.message} </h1>}
     </>
